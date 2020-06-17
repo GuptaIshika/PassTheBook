@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { PublishComponent } from './publish/publish.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PublishComponent } from './publish/publish.component';
     HomeComponent,
     SignupComponent,
     LoginComponent,
-    PublishComponent
+    PublishComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
