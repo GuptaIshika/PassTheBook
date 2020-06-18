@@ -9,10 +9,10 @@ import { PublishComponent } from './publish/publish.component';
 
 const routes: Routes = [
   {path:'',component:WebsiteComponent,children:[
-    {path:'',component:HomeComponent},
-    {path:'signup',component:SignupComponent},
-    {path:'login',component:LoginComponent},
-    {path:'publish',component:PublishComponent}
+      {path:'',component:HomeComponent},
+      {path:'signup',component:SignupComponent},
+      {path:'login',component:LoginComponent},
+      {path:'publish',component:PublishComponent}
   ]}
 ];
 
