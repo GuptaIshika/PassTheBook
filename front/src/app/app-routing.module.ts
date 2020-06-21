@@ -14,6 +14,7 @@ import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path:'',component:WebsiteComponent,children:[
+<<<<<<< HEAD
     {path:'',component:HomeComponent},
     {path:'signup',component:SignupComponent},
     {path:'login',component:LoginComponent},
@@ -28,6 +29,13 @@ const routes: Routes = [
 
  ]} 
 
+=======
+      {path:'',component:HomeComponent},
+      {path:'signup',component:SignupComponent},
+      {path:'login',component:LoginComponent},
+      {path:'publish',component:PublishComponent}
+  ]}
+>>>>>>> da1fc2324791b25a22ae7d541d1e45498582ce26
 ];
 
 @NgModule({

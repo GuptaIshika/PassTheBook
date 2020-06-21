@@ -13,7 +13,11 @@ body{
 .loginbox{
     width: 320px;
     height: 420px;
+<<<<<<< HEAD
     background: #262626;
+=======
+    background: #434343;
+>>>>>>> da1fc2324791b25a22ae7d541d1e45498582ce26
     color: #fff;
     top: 50%;
     left: 50%;
