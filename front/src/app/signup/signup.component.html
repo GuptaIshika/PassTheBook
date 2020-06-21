@@ -1,24 +1,24 @@
 <body>
     <div class="regform"><h1>Registration Form</h1></div>
     <div class="main">
-        <form>
+        <form #f="ngForm">
             <div id="name">
                 <h2 class="name">Name</h2>
-                <input  class="firstname" placeholder="firstname" type="text" name="first_name"><br>
+                <input #firstnameref="ngModel" [(ngModel)]="firstnameprop" class="firstname" placeholder="firstname" type="text" name="firstname"><br>
                 <label class="firstlable">first name</label>
-                <input  class="lastname" placeholder="lastname" type="text" name="last_name"><br>
+                <input #lastnameref="ngModel" [(ngModel)]="lastnameprop" class="lastname" placeholder="lastname" type="text" name="lastname"><br>
                 <label class="lastlable">last name</label>
             </div>
             <h2 class="name">Email</h2>
-            <input class="email" placeholder="email" type="email" name="email">
+            <input #emailref="ngModel" [(ngModel)]="emailprop" class="email" placeholder="email" type="email" name="email">
             <h2 class="name">Password</h2>
-            <input class="password" placeholder="password" type="password" name="password">
+            <input #passwordref="ngModel" [(ngModel)]="passwordprop" class="password" placeholder="password" type="password" name="password">
             <h2 class="name">Phone</h2>
-            <input class="code" placeholder="code" type="number" name="area_code">
+            <input #coderef="ngModel" [(ngModel)]="codeprop" class="code" placeholder="code" type="number" name="code">
             <label class="area-code">Area Code</label>
-            <input class="number" placeholder="phone number" type="number" name="phone">
+            <input #numberref="ngModel" [(ngModel)]="numberprop" class="number" placeholder="phone number" type="number" name="phone">
             <label class="phone-number">Phone number</label>
-            <button type="submit">Register</button>
+            <button type="submit"  name="signup" (click)="signup()" >Register</button>
 
 
 

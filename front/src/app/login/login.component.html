@@ -1,14 +1,12 @@
 <body>
-    
-
-<div class="loginbox">
+    <div class="loginbox">
     <h1>Login Here</h1>
-    <form>
-        <p>Username</p>
-        <input type="text" name="" placeholder="Enter username" >
+    <form #f="ngForm">
+        <p>Email</p>
+        <input  #emailref="ngModel"  [(ngModel)]="emailprop"        type="email" name="email" placeholder="Enter email" >
         <p>Password</p>
-        <input type="password" name="" placeholder="Enter password">
-        <input type="submit" name="" value="login">
+        <input  #passwordref="ngModel"  [(ngModel)]="passwordprop"   type="password" name="password" placeholder="Enter password">
+        <input type="submit" name="login" value="login" (click)="login()">
         <a href="#">Forgot password ?</a><br>
         <a href="#">Don't have an account ?</a>
     </form>
