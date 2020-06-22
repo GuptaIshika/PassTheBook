@@ -9,7 +9,7 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
 signup(d):any
-{
+{  
   return this.http.post("http//localhost:3000/signup",d);
 }
 

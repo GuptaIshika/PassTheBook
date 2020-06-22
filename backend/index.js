@@ -8,7 +8,7 @@ const ObjectId = require ('mongodb').ObjectId;
 
 
 
-var dbname = "sampledb"
+var dbname = "sampledb";
 var client = new Mongoclient('mongodb+srv://admin:admin@cluster0-kxhos.mongodb.net/dbname?retryWrites=true&w=majority',{useNewUrlParser:true}); 
 var connection;
 client.connect((err,con)=>{
@@ -28,15 +28,15 @@ const app = express();
 app.use(cors());
 
 
-app.get('/', (req, res)=>{
+//app.get('/', (req, res)=>{
 
-    res.send({status:"ok", data:"this is a test api"});
-})
+  //  res.send({status:"ok", data:"this is a test api"});
+//})
 
-app.get('/user', (req, res)=>{
-    var id= req.query.id;
-    res.send({status:"ok", data:[{name:"X", age:78, id:id},{name:"Y", age:67}]});
-})
+//app.get('/user', (req, res)=>{
+  //  var id= req.query.id;
+    //res.send({status:"ok", data:[{name:"X", age:78, id:id},{name:"Y", age:67}]});
+//})
 
 
 
@@ -74,15 +74,10 @@ app.post('/signup',bodyParser.json(),(req,res)=>{
                     res.send({status:"failed",data:err});
                     }
             })
-
-
-
-
-            }
+        }
     })
     
-    
-     collection.insert(req.body, (err,result)=>{
+    collection.insert(req.body, (err,result)=>{
         if(!err){
             res.send({status:"ok",data:"signup sucess"});
                                 }
