@@ -11,7 +11,7 @@ const ObjectId = require ('mongodb').ObjectId;
 var dbname = "sampledb";
 var client = new Mongoclient('mongodb+srv://admin:admin@cluster0-kxhos.mongodb.net/dbname?retryWrites=true&w=majority',{useNewUrlParser:true}); 
 var connection;
-client.connect((err,con)=>{
+client.connect((err, con)=>{
 
     if(!err)
     {
