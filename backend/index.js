@@ -59,32 +59,32 @@ collection.find(req.body).toArray((err,docs)=>{
 
 app.post('/signup',bodyParser.json(),(req,res)=>{
 
+
+    console.log(req.body)
+
+
     var collection = connection.db(dbname).collection('users');
     
     collection.find({email:req.body.email}).toArray((err,docs)=>{
         if(!err && docs.length>0){
+                                    console.log("already exist");
                                       res.send({status:"failed",data:"email already exist!!"});
                                 }
         else{
                 collection.insert(req.body, (err,result)=>{
                 if(!err){
+                    console.log("registered")
                     res.send({status:"ok",data:"signup sucess"});
                                         }
                 else{
+                    console.log("failed");
                     res.send({status:"failed",data:err});
                     }
             })
         }
     })
     
-    collection.insert(req.body, (err,result)=>{
-        if(!err){
-            res.send({status:"ok",data:"signup sucess"});
-                                }
-        else{
-            res.send({status:"failed",data:err});
-            }
-    })
+    
     })
     
 
