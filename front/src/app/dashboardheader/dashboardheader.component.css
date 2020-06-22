@@ -13,13 +13,12 @@ header{
     height: 100px;
     background-color: #262626;
     width: 100%;
-    
-    
     }
     .logo{
         width: 30%;
         float: left;
         line-height: 100px;
+        
     }
     .logo a{
         text-decoration: none;
@@ -27,6 +26,8 @@ header{
         font-family: sans-serif;
         color: #fff;
         letter-spacing: 5px;
+        font-weight: bold;
+        
     }
     nav{
         float: right;
@@ -38,6 +39,6 @@ header{
         letter-spacing: 4px;
         font-size: 20px;
         margin: 0 10px;
-        color: #fff;
+        color: peru;
     }
 
