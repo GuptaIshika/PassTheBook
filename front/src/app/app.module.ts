@@ -16,7 +16,6 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardheaderComponent } from './dashboardheader/dashboardheader.component';
 import { PublishbookComponent } from './publishbook/publishbook.component';
-import { LogoutComponent } from './logout/logout.component';
 import { LatestbookpublishedComponent } from './latestbookpublished/latestbookpublished.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PrefixPipe } from './prefix.pipe';
@@ -39,7 +38,7 @@ import { PrefixPipe } from './prefix.pipe';
     DashboardComponent,
     DashboardheaderComponent,
     PublishbookComponent,
-    LogoutComponent,
+    
     LatestbookpublishedComponent,
     PrefixPipe
   ],

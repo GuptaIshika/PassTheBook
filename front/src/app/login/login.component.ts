@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router ,private ds:DataService) { }
 
   ngOnInit(): void {
-                        if(localStorage.getItem('email'))
+                       if(localStorage.getItem('email'))
                         {
                           this.router.navigate(['/dashboard']);
                         }
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   }
   login()
-  {
+  {     alert("in login");
       this.ds.login({email:this.emailprop,password:this.passwordprop})
       .subscribe((response)=>{
         if(response.status=="ok")

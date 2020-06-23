@@ -11,12 +11,12 @@ export class DataService {
 signup(d):any
 {  
   alert(JSON.stringify(d));
-  return this.http.post("http://localhost:3000/signup",d);
+  return this.http.post('http://localhost:3000/signup',d);
 }
 
 login(d):any
-{
-  return this.http.post("http//localhost:3000/login",d);
+{  alert(JSON.stringify(d));
+  return this.http.post('http://localhost:3000/login',d);
 }
 
 }
