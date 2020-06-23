@@ -10,7 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LatestbookpublishedComponent } from './latestbookpublished/latestbookpublished.component';
 import { PublishbookComponent } from './publishbook/publishbook.component';
-import { LogoutComponent } from './logout/logout.component';
+
 import { AuthGuard } from './auth.guard';
 
 
@@ -29,7 +29,7 @@ const routes: Routes = [
   {path:'',component:LatestbookpublishedComponent},
   {path:'latestbookpublished',component:LatestbookpublishedComponent},
   {path:'publishbook',component:PublishbookComponent},
-  {path:'logout',component:LogoutComponent}
+  
 
  ]} 
 

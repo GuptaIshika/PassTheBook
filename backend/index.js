@@ -42,7 +42,7 @@ app.use(cors());
 
 
 app.post('/login',bodyParser.json(),(req,res)=>{
-
+    console.log(req.body)
 var collection = connection.db(dbname).collection('users');
 collection.find(req.body).toArray((err,docs)=>{
     if(!err && docs.length>0){
