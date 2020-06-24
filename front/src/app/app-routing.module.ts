@@ -29,6 +29,8 @@ const routes: Routes = [
   {path:'',component:LatestbookpublishedComponent},
   {path:'latestbookpublished',component:LatestbookpublishedComponent},
   {path:'publishbook',component:PublishbookComponent},
+
+  
   
 
  ]} 
