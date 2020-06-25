@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
 }
-body{
+box-area{
     text-align: center;
+    
 }
 .wrapper{
     width: 1170px;
     margin: 0 auto;
+    
 }
 header{
     height: 100px;
@@ -39,13 +41,13 @@ header{
         letter-spacing: 4px;
         font-size: 20px;
         margin: 0 10px;
-        color: peru;
+        color:#fff;
     }
     button{
        
        color: white;
        cursor: pointer;
-       border-radius: 40px;
+       border-radius: 90px;
        background-color:#3BAF9F;
        border: 2px solid #366473;
        padding-top: -20px;

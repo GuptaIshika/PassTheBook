@@ -1,1 +1,46 @@
-<p>publishbook works!</p>
+<form #f="ngForm"  >
+    <div>
+         <h2 class="heading">PUBLISH YOUR BOOK HERE</h2>
+        <h3>Category</h3>
+        <select name="category" #categoryref="ngModel" [(ngModel)]="categoryprop">
+            <option value="mystery">Mystery</option>
+            <option value="thriller">Thriller</option>
+            <option value="action">Action</option>
+            <option value="romance">Romance</option>
+            <option value="fiction">Fiction</option>
+            <option value="non-fiction">Non-fiction</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="horror">Horror</option>
+            <option value="humour">Humour</option>
+        </select>
+        <h3>Book title</h3>
+        <input  #titleref="ngModel" [(ngModel)]="titleprop"    type="text" name="title" placeholder="title">
+        <h3>Price</h3>
+        <input #priceref="ngModel" [(ngModel)]="priceprop" type="text" name="price" placeholder="price expected">
+        <h3>Book image</h3>
+        <input #imgref="ngModel" [(ngModel)]="imgprop" type="file" name="image" placeholder="upload book img">
+        <h3>Country</h3>
+        <select #countryref="ngModel" [(ngModel)]="countryprop" name="country">
+         <option value="">Select country</option>   
+        </select>
+        <h3>State</h3>
+        <select #stateref="ngModel" [(ngModel)]="stateprop" name="state">
+            <option value="">Select state</option>
+        </select>
+        <h3>City</h3>
+        <select #cityref="ngModel" [(ngModel)]="cityprop" name="city">
+            <option value="">Select city</option>
+        </select>
+        <h3>Your full name</h3>
+        <input #fullnameref="ngModel" [(ngModel)]="fullnameprop" type="text" name="fullname" placeholder="Full name">
+        <h3>Your contact number</h3>
+        <input #numberref="ngModel" [(ngModel)]="numberprop" type="number" name="phonenumber" placeholder="Phone number">
+        <h3>Email</h3>
+        <input #emailref="ngModel" [(ngModel)]="emailprop" type="email" name="email" placeholder="email">
+        <h3>Date of uploading book</h3>
+        <input #dateref="ngModel" [(ngModel)]="dateprop" type="date" name="date" placeholder="date">
+        <button type="submit" (click)="publish()" >PUBLISH</button>
+
+  </div>
+</form>
+

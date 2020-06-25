@@ -24,11 +24,12 @@ const routes: Routes = [
       {path:'about',component:AboutComponent}
     ]},
 
- {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard],children:[
+ {path:'dashboard',component:DashboardComponent, canActivate:[AuthGuard],children:[
 
           {path:'',component:LatestbookpublishedComponent},
           {path:'latestbookpublished',component:LatestbookpublishedComponent},
           {path:'publishbook',component:PublishbookComponent}
+
   
 
  ]} 
