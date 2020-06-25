@@ -58,9 +58,7 @@ collection.find(req.body).toArray((err,docs)=>{
 
 
 app.post('/signup',bodyParser.json(),(req,res)=>{
-
-
-    console.log(req.body)
+      console.log(req.body)
 
 
     var collection = connection.db(dbname).collection('users');
@@ -86,9 +84,32 @@ app.post('/signup',bodyParser.json(),(req,res)=>{
     
     
     })
-    
 
-    app.listen(3000,()=>{console.log("server is listening on port 3000")});
+
+
+
+
+
+    app.post('/publish',bodyParser.json(),(req,res)=>{
+           console.log(req.body)
+    
+                   var collection = connection.db(dbname).collection('publisher');
+        
+                    collection.insert(req.body, (err,result)=>{
+                    if(!err){
+                        console.log("published!!!")
+                        res.send({status:"ok",data:"publish sucessfull!!"});
+                                            }
+                    else{
+                        console.log("failed");
+                        res.send({status:"failed",data:err});
+                        }
+                })
+            
+        })
+        
+        
+        app.listen(3000,()=>{console.log("server is listening on port 3000")});
 
 
 

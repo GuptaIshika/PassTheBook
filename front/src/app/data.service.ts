@@ -19,4 +19,13 @@ login(d):any
   return this.http.post('http://localhost:3000/login',d);
 }
 
+publish(d):any
+{
+  alert(JSON.stringify(d));
+  return this.http.post('http://localhost:3000/publish',d)
+}
+
+
+
+
 }
