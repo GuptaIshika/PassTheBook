@@ -26,9 +26,9 @@ const routes: Routes = [
 
  {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard],children:[
 
-  {path:'',component:LatestbookpublishedComponent},
-  {path:'latestbookpublished',component:LatestbookpublishedComponent},
-  {path:'publishbook',component:PublishbookComponent},
+          {path:'',component:LatestbookpublishedComponent},
+          {path:'latestbookpublished',component:LatestbookpublishedComponent},
+          {path:'publishbook',component:PublishbookComponent}
   
 
  ]} 
