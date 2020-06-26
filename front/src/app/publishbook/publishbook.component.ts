@@ -31,7 +31,7 @@ publish()
   if(response.status=="ok")
           {
             alert("your book is being published for sell");
-            this.router.navigate(['/latestbookpublished']);
+            this.router.navigate(['/dashboard']);
            }
   else{
     alert("there is some  error in publishing your book!!");
