@@ -90,7 +90,7 @@ app.post('/signup',bodyParser.json(),(req,res)=>{
 
 
 
-    app.post('/publish',bodyParser.json(),(req,res)=>{
+    app.post('/publish',bodyParser.json(), (req,res)=>{
            console.log(req.body)
     
                    var collection = connection.db(dbname).collection('publisher');
