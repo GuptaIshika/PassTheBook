@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import csc from 'country-state-city';
 
 @Component({
   selector: 'app-publishbook',
@@ -20,36 +21,41 @@ export class PublishbookComponent implements OnInit {
   numberprop;
   emailprop;
   dateprop;
+  bookImage;
 
   countries;
+  states;
 
 constructor(private ds:DataService,private router:Router,private http:HttpClient) { }
  ngOnInit(): void {
 
+  console.log(csc);
+  this.countries = csc.getAllCountries();
+  console.log(this.countries);
   
-  var headers = new HttpHeaders();
-  headers.set('Accept',"application/json");
-  headers.set('api-tocken', "AuXnFjES43NqbdODZoc1anLtpO9op_9HsA7hqU56HJoxlbbNrMsUAzmsp6cqoZ0HhWQ");
-  headers.set('user-email','sanjayrathore144@gmail.com');
+  // var headers = new HttpHeaders();
+  // headers.set('Accept',"application/json");
+  // headers.set('api-tocken', "AuXnFjES43NqbdODZoc1anLtpO9op_9HsA7hqU56HJoxlbbNrMsUAzmsp6cqoZ0HhWQ");
+  // headers.set('user-email','sanjayrathore144@gmail.com');
   
 
-  this.http.get('https://www.universal-tutorial.com/api/getaccesstoken', {headers:headers})
-            .subscribe((authTocken:any)=>{
-              alert("got auth tocken"+ JSON.stringify(authTocken));
-              var authheader = "Bearer "+authTocken.auth_token
-              console.log(authheader);
+  // this.http.get('https://www.universal-tutorial.com/api/getaccesstoken', {headers:headers})
+  //           .subscribe((authTocken:any)=>{
+  //             alert("got auth tocken"+ JSON.stringify(authTocken));
+  //             var authheader = "Bearer "+authTocken.auth_token
+  //             console.log(authheader);
               
-              headers = new HttpHeaders();
-              headers.set("Authorization",authheader);
-              headers.set('api-tocken', "AuXnFjES43NqbdODZoc1anLtpO9op_9HsA7hqU56HJoxlbbNrMsUAzmsp6cqoZ0HhWQ");
-              headers.set('Accept',"application/json");
-              this.http.get('https://www.universal-tutorial.com/api/countries/', {headers:headers}).
-              subscribe((cts)=>{                                                                               
-                         alert("got countries list"+JSON.stringify(cts));
-                         this.countries =cts;
-                  })
+  //             headers = new HttpHeaders();
+  //             headers.set("Authorization",authheader);
+  //             headers.set('api-tocken', "AuXnFjES43NqbdODZoc1anLtpO9op_9HsA7hqU56HJoxlbbNrMsUAzmsp6cqoZ0HhWQ");
+  //             headers.set('Accept',"application/json");
+  //             this.http.get('https://www.universal-tutorial.com/api/countries/', {headers:headers}).
+  //             subscribe((cts)=>{                                                                               
+  //                        alert("got countries list"+JSON.stringify(cts));
+  //                        this.countries =cts;
+  //                 })
 
-            })
+  //           })
 
 
 
@@ -60,10 +66,39 @@ constructor(private ds:DataService,private router:Router,private http:HttpClient
 
 
   }
+
+
+  loadState()
+  {
+    this.states = csc.getStatesOfCountry(this.countryprop);
+  }
+
+  getFile(e)
+  {
+    this.bookImage = e.target.files[0];
+  }
+
+  loadCities()
+  {}
+
 publish()
 {
   alert("in publish");
-  this.ds.publish({category:this.categoryprop,title:this.titleprop,price:this.priceprop,image:this.imgprop,country:this.countryprop,state:this.stateprop,city:this.cityprop,fullname:this.fullnameprop,number:this.numberprop,email:this.emailprop,date:this.dateprop})
+
+  var formData = new FormData();
+  formData.set('category',this.categoryprop );
+  formData.set('title',this.titleprop );
+  formData.set('price',this.priceprop );
+  formData.set('country',this.countryprop );
+  formData.set('state',this.stateprop );
+  formData.set('city',this.cityprop );
+  formData.set('fullname',this.fullnameprop );
+  formData.set('phoneNumber',this.numberprop );
+  formData.set('email',this.emailprop );
+  formData.set('date',this.dateprop );
+  formData.set('image', this.bookImage)
+
+  this.ds.publish(formData)
   .subscribe((response)=>{
   if(response.status=="ok")
           {

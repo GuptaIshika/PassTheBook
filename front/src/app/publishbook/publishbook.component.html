@@ -18,7 +18,7 @@
         <h3>Price</h3>
         <input #priceref="ngModel" [(ngModel)]="priceprop" type="text" name="price" placeholder="price expected">
         <h3>Book image</h3>
-        <input #imgref="ngModel" [(ngModel)]="imgprop" type="file" name="image" placeholder="upload book img">
+        <input  type="file" (change)="getFile($event)" name="image" placeholder="upload book img">
         <h3>Country</h3>
 
 
@@ -26,8 +26,8 @@
 
 
 
-        <select #countryref="ngModel" [(ngModel)]="countryprop" name="country">
-         <option *ngFor="let ctrs of countries" value="{{ctrs.country_short_name}}">{{ctrs.country_name}}</option>   
+        <select #countryref="ngModel" [(ngModel)]="countryprop"  (change)="loadState()"  name="country">
+         <option *ngFor="let ctrs of countries" value="{{ctrs.id}}">{{ctrs.name}}</option>   
         </select>
 
 
@@ -40,9 +40,11 @@
         
 
         <h3>State</h3>
-        <select #stateref="ngModel" [(ngModel)]="stateprop" name="state">
-            <option value="">Select state</option>
-        </select>
+        <select #stateref="ngModel" [(ngModel)]="stateprop"  (change)="loadCities()"  name="states">
+            <option *ngFor="let ctrs of states" value="{{ctrs.id}}">{{ctrs|json}}</option>   
+           </select>
+
+       
         <h3>City</h3>
         <select #cityref="ngModel" [(ngModel)]="cityprop" name="city">
             <option value="">Select city</option>

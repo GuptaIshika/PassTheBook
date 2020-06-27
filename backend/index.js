@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const Mongoclient = require ('mongodb').MongoClient;
 const ObjectId = require ('mongodb').ObjectId;
-
-
+const path = require('path');
+const multer = require('multer');
 
 
 
@@ -28,6 +28,79 @@ const app = express();
 app.use(cors());
 
 
+
+
+
+
+
+
+app.use(express.static(path.join(__dirname,'uploads')));
+
+
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        console.log("in destination");
+      cb(null, 'uploads')
+    },
+    filename: function (req, file, cb) {
+
+
+        var collection = connection.db(dbname).collection('publisher');
+         collection.insert(req.body, (err,result)=>{
+                    if(!err)
+                    {
+                  
+                            req.genId=result.insertedIds['0'];
+                            req.isInsertedSuccess = true;
+                            cb(null, req.genId+"_"+file.fieldname+".jpg");
+
+
+                    }
+                    else{
+                            req.isInsertedSuccess = false;
+                            cb(null, "temp.jpg");
+                    }
+                })
+
+
+            
+     
+
+
+    }
+  })
+ 
+  
+  var upload = multer({ storage: storage })
+
+
+  app.post('/publish',  upload.single('image'), 
+                      (req,res)=>{  console.log("in last",);  
+                      
+                      if(req.isInsertedSuccess)
+                      {
+
+                          res.send({status:"ok"})
+                     
+                          
+                      }
+                      else {
+                          res.send({status:'failed', data:"already exist"})
+                      } 
+}
+)
+
+
+
+
+
+
+
+
+
+
+
 //app.get('/', (req, res)=>{
 
   //  res.send({status:"ok", data:"this is a test api"});
@@ -39,6 +112,7 @@ app.use(cors());
 //})
 
 app.get('/getbooks',bodyParser.json(),(req,res)=>{
+    console.log(req.body)
     var collection = connection.db(dbname).collection('publisher');
     
     collection.find().toArray((err,docs)=>{
@@ -114,23 +188,23 @@ app.post('/signup',bodyParser.json(),(req,res)=>{
 
 
 
-    app.post('/publish',bodyParser.json(), (req,res)=>{
-           console.log(req.body)
+    // app.post('/publish', bodyParser.json(), (req,res)=>{
+    //        console.log(req.body)
     
-                   var collection = connection.db(dbname).collection('publisher');
+    //                var collection = connection.db(dbname).collection('publisher');
         
-                    collection.insert(req.body, (err,result)=>{
-                    if(!err){
-                        console.log("published!!!")
-                        res.send({status:"ok",data:"publish sucessfull!!"});
-                                            }
-                    else{
-                        console.log("failed");
-                        res.send({status:"failed",data:err});
-                        }
-                })
+    //                 collection.insert(req.body, (err,result)=>{
+    //                 if(!err){
+    //                     console.log("published!!!")
+    //                     res.send({status:"ok",data:"publish sucessfull!!"});
+    //                                         }
+    //                 else{
+    //                     console.log("failed");
+    //                     res.send({status:"failed",data:err});
+    //                     }
+    //             })
             
-        })
+    //     })
         
         
         app.listen(3000,()=>{console.log("server is listening on port 3000")});

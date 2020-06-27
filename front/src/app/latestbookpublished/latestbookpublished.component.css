@@ -24,3 +24,8 @@
         box-sizing: border-box;
     }
     
+
+    .item img{
+        width: 90%;
+        height: 50%;
+    }
