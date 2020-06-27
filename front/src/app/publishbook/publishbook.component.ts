@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-publishbook',
@@ -20,8 +21,44 @@ export class PublishbookComponent implements OnInit {
   emailprop;
   dateprop;
 
-constructor(private ds:DataService,private router:Router) { }
+  countries;
+
+constructor(private ds:DataService,private router:Router,private http:HttpClient) { }
  ngOnInit(): void {
+
+  
+  var headers = new HttpHeaders();
+  headers.set('Accept',"application/json");
+  headers.set('api-tocken', "AuXnFjES43NqbdODZoc1anLtpO9op_9HsA7hqU56HJoxlbbNrMsUAzmsp6cqoZ0HhWQ");
+  headers.set('user-email','sanjayrathore144@gmail.com');
+  
+
+  this.http.get('https://www.universal-tutorial.com/api/getaccesstoken', {headers:headers})
+            .subscribe((authTocken:any)=>{
+              alert("got auth tocken"+ JSON.stringify(authTocken));
+              var authheader = "Bearer "+authTocken.auth_token
+              console.log(authheader);
+              
+              headers = new HttpHeaders();
+              headers.set("Authorization",authheader);
+              headers.set('api-tocken', "AuXnFjES43NqbdODZoc1anLtpO9op_9HsA7hqU56HJoxlbbNrMsUAzmsp6cqoZ0HhWQ");
+              headers.set('Accept',"application/json");
+              this.http.get('https://www.universal-tutorial.com/api/countries/', {headers:headers}).
+              subscribe((cts)=>{                                                                               
+                         alert("got countries list"+JSON.stringify(cts));
+                         this.countries =cts;
+                  })
+
+            })
+
+
+
+
+
+
+
+
+
   }
 publish()
 {

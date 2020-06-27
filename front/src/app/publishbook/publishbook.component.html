@@ -20,9 +20,25 @@
         <h3>Book image</h3>
         <input #imgref="ngModel" [(ngModel)]="imgprop" type="file" name="image" placeholder="upload book img">
         <h3>Country</h3>
+
+
+
+
+
+
         <select #countryref="ngModel" [(ngModel)]="countryprop" name="country">
-         <option value="">Select country</option>   
+         <option *ngFor="let ctrs of countries" value="{{ctrs.country_short_name}}">{{ctrs.country_name}}</option>   
         </select>
+
+
+
+
+
+
+
+
+        
+
         <h3>State</h3>
         <select #stateref="ngModel" [(ngModel)]="stateprop" name="state">
             <option value="">Select state</option>
