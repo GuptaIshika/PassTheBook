@@ -14,15 +14,15 @@ export class LatestbookpublishedComponent implements OnInit {
 
   ngOnInit(): void {
       
-    this.bookpost.getbooks().subscribe((data)=>{
+    this.d.getbooks().subscribe((data)=>{
       if(data.status==true)
       {
-       this.bookpost= data;
+       this.bookpost = data;
       }
       else{
         alert("document not found");
       }
     })
  }
-
 }
+

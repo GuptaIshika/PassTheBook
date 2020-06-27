@@ -40,10 +40,10 @@ app.use(cors());
 
 app.get('/getbooks',bodyParser.json(),(req,res)=>{
     var collection = connection.db(dbname).collection('publisher');
-    console.log(req,body);
+    
     collection.find().toArray((err,docs)=>{
         if(!err && docs.length>0){
-            res.send({status:true,res:docs});
+            res.send({status:true,data:docs});
                                 }
         else{
             res.send({status:false,data:err});
