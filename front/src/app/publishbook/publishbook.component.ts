@@ -26,6 +26,7 @@ export class PublishbookComponent implements OnInit {
 
   countries;
   states;
+  cities;
 
 constructor(private ds:DataService,private router:Router,private http:HttpClient) { }
  ngOnInit(): void {
@@ -80,7 +81,9 @@ constructor(private ds:DataService,private router:Router,private http:HttpClient
   }
 
   loadCities()
-  {}
+  {
+    this.cities = csc.getCitiesOfState(this.stateprop);
+  }
 
 publish()
 {
