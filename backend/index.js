@@ -38,6 +38,30 @@ app.use(cors());
     //res.send({status:"ok", data:[{name:"X", age:78, id:id},{name:"Y", age:67}]});
 //})
 
+app.get('/getbooks',bodyParser.json(),(req,res)=>{
+    var collection = connection.db(dbname).collection('publisher');
+    
+    collection.find().toArray((err,docs)=>{
+        if(!err && docs.length>0){
+            res.send({status:true,data:docs});
+                                }
+        else{
+            res.send({status:false,data:err});
+            }
+        
+    })
+
+})
+
+
+
+
+
+
+
+
+
+
 
 
 

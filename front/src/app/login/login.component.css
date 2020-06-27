@@ -2,13 +2,25 @@
     margin: 0;
     padding: 0;
 }
+.bg{
+    
+    border: 1px solid transparent;
+    background-image: url('../../assets/LoginBG3.jpg');
+    height: -webkit-fill-available;
+    margin-bottom: -20px;
+    background-size: 100% 100%;
+    
+}
+
+
 body{
         background-size: cover;
     background-position: center;
     font-family: sans-serif;
-    margin-top: 40px ;
+    height: 500px;
+    /* margin-top: 40px ; */
     
-    
+
     
     
 }
@@ -16,7 +28,7 @@ body{
     width: 320px;
     height: 420px;
 
-    background: #262626;
+    background:   rgb(0,0,0,0.6);
     color: #fff;
     top: 50%;
     left: 50%;
@@ -25,7 +37,7 @@ body{
     box-sizing: border-box;
     padding: 70px 30px;
     margin-top: 230px;
-    margin-bottom: -210px;
+    margin-bottom: -200px;
     border-radius: 6px 6px;
 
     
