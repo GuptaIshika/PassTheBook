@@ -2,12 +2,22 @@
     margin: 0;
     padding: 0;
 }
-div{
+.outer{
     background-position: center;
     background-size: cover;
     font-family: sans-serif;
     margin-top: 4px;
     background-color: darkgray;
+}
+.inner{
+    width: 40%;
+    margin-left:  30% ;
+}
+.heading{
+    font-size: 50px;
+    text-shadow: 1px 1px 4px #656565,
+                 2px 2px 5px #727272,
+                 3px 3px 6px #858585;
 }
 button{
     background-color: #3BAF9F;
