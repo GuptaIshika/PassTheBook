@@ -1,6 +1,7 @@
 <form #f="ngForm"  >
-    <div>
-         <h2 class="heading">PUBLISH YOUR BOOK HERE</h2>
+    <div class="outer">
+        <div class="inner">
+         <h2 class="heading">PUBLISH YOUR BOOK HERE</h2><br><br>
         <h3>Category</h3>
         <select name="category" #categoryref="ngModel" [(ngModel)]="categoryprop">
             <option value="mystery">Mystery</option>
@@ -62,7 +63,7 @@
         <h3>Date of uploading book</h3>
         <input #dateref="ngModel" [(ngModel)]="dateprop" type="date" name="date" placeholder="date">
         <button type="submit" (click)="publish()" >PUBLISH</button>
-
+    </div>
   </div>
 </form>
 
