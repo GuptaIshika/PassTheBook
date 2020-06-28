@@ -41,14 +41,18 @@
 
         <h3>State</h3>
         <select #stateref="ngModel" [(ngModel)]="stateprop"  (change)="loadCities()"  name="states">
-            <option *ngFor="let ctrs of states" value="{{ctrs.id}}">{{ctrs|json}}</option>   
+            <option *ngFor="let ctrs of states" value="{{ctrs.id}}">{{ctrs.name}}</option>   
            </select>
 
        
         <h3>City</h3>
-        <select #cityref="ngModel" [(ngModel)]="cityprop" name="city">
-            <option value="">Select city</option>
+        <select #cityref="ngModel" [(ngModel)]="cityprop"   name="city">
+            <option *ngFor="let ctrs of cities" value="{{ctrs.id}}">{{ctrs.name}}</option>
         </select>
+
+
+
+
         <h3>Your full name</h3>
         <input #fullnameref="ngModel" [(ngModel)]="fullnameprop" type="text" name="fullname" placeholder="Full name">
         <h3>Your contact number</h3>

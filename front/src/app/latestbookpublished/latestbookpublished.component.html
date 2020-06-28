@@ -1,15 +1,20 @@
 <h1>BOOKS AVAILABLE</h1>
+
 <div class="products">
 <div class="item" *ngFor="let p of bookpost">
+    
+    
     <img src="http://localhost:3000/{{p._id}}_image.jpg" alt="">
+    <div class="one">
     <p>CATEGORY:{{p.category}}</p>
     <p>TITLE:{{p.title}}</p>
     <p>PRICE:{{p.price}}</p>
-    <p>{{p.image}}</p>
     <p>NAME:{{p.fullname}}</p>
-    <p>CONTACT NUMBER:{{p.phonenumber}}</p>
+    <p>CONTACT NUMBER:{{p.number}}</p>
     <p>CONTACT MAIL:{{p.email}}</p>
     <p>CITY:{{p.city}}</p>
-    <button (click)="sendReq(p)">sendRequest</button>
+    <button (click)="sendReq()">sendRequest</button>
+    </div>
+    
 </div>
  </div>
