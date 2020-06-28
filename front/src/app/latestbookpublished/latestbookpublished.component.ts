@@ -26,11 +26,10 @@ export class LatestbookpublishedComponent implements OnInit {
     })
  }
 
- sendReq(p)
+ sendReq()
  {
-   alert(JSON.stringify(p))
+   alert("LIKE THIS BOOK!!! YOU CAN DIRECTLY CONTACT TO SELLER THROUGH GIVEN DETAILS");
  }
-
 
 }
 

@@ -1,4 +1,5 @@
 <h1>BOOKS AVAILABLE</h1>
+
 <div class="products">
 <div class="item" *ngFor="let p of bookpost">
     
@@ -12,7 +13,7 @@
     <p>CONTACT NUMBER:{{p.number}}</p>
     <p>CONTACT MAIL:{{p.email}}</p>
     <p>CITY:{{p.city}}</p>
-    <button (click)="sendReq(p)">sendRequest</button>
+    <button (click)="sendReq()">sendRequest</button>
     </div>
     
 </div>
