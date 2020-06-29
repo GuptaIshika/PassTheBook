@@ -23,7 +23,9 @@ footer nav a{
 p{
     color: #fff;
 }
-.copyright
+p
 {
     text-align: center;
+    margin-bottom: 5px;
+    margin-left: 400px;
 }
