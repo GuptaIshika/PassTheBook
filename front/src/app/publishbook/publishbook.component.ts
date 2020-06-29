@@ -4,6 +4,7 @@ import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import csc from 'country-state-city';
+import {ICountry,IState,ICity} from 'country-state-city';
 
 @Component({
   selector: 'app-publishbook',
@@ -23,6 +24,7 @@ export class PublishbookComponent implements OnInit {
   emailprop;
   dateprop;
   bookImage;
+  textareaprop;
 
   countries;
   states;
@@ -102,7 +104,8 @@ publish()
   formData.set('number',this.numberprop );
   formData.set('email',this.emailprop );
   formData.set('date',this.dateprop );
-  formData.set('image', this.bookImage)
+  formData.set('image', this.bookImage);
+  formData.set('textarea',this.textareaprop);
 
   this.ds.publish(formData)
   .subscribe((response)=>{
