@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   }
   login()
-  {     alert("in login");
+  {     
       this.ds.login({email:this.emailprop,password:this.passwordprop})
       .subscribe((response)=>{
         if(response.status=="ok")

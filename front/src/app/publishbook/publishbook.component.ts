@@ -99,7 +99,7 @@ publish()
   formData.set('state',this.stateprop );
   formData.set('city',this.cityprop );
   formData.set('fullname',this.fullnameprop );
-  formData.set('phoneNumber',this.numberprop );
+  formData.set('number',this.numberprop );
   formData.set('email',this.emailprop );
   formData.set('date',this.dateprop );
   formData.set('image', this.bookImage)
@@ -107,7 +107,7 @@ publish()
   this.ds.publish(formData)
   .subscribe((response)=>{
   if(response.status=="ok")
-          {
+          { 
             alert("your book is being published for sell");
             this.router.navigate(['/dashboard']);
            }

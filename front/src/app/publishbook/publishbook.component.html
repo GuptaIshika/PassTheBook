@@ -1,7 +1,8 @@
+<h2 class="heading">PUBLISH YOUR BOOK HERE</h2>
 <form #f="ngForm"  >
     <div class="outer">
         <div class="inner">
-         <h2 class="heading">PUBLISH YOUR BOOK HERE</h2><br><br>
+         
         <h3>Category</h3>
         <select name="category" #categoryref="ngModel" [(ngModel)]="categoryprop">
             <option value="mystery">Mystery</option>
@@ -57,7 +58,7 @@
         <h3>Your full name</h3>
         <input #fullnameref="ngModel" [(ngModel)]="fullnameprop" type="text" name="fullname" placeholder="Full name">
         <h3>Your contact number</h3>
-        <input #numberref="ngModel" [(ngModel)]="numberprop" type="number" name="phonenumber" placeholder="Phone number">
+        <input #numberref="ngModel" [(ngModel)]="numberprop" type="number" name="number" placeholder="Phone number">
         <h3>Email</h3>
         <input #emailref="ngModel" [(ngModel)]="emailprop" type="email" name="email" placeholder="email">
         <h3>Date of uploading book</h3>
