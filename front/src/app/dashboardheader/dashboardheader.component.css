@@ -10,11 +10,15 @@ box-area{
     width: 1170px;
     margin: 0 auto;
     
+    
 }
 header{
     height: 100px;
     background-color: #262626;
     width: 100%;
+    
+    margin-top: -10px;
+    
     }
     .logo{
         width: 30%;

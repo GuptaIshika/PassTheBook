@@ -19,6 +19,9 @@
         <input  #titleref="ngModel" [(ngModel)]="titleprop"    type="text" name="title" placeholder="title">
         <h3>Price</h3>
         <input #priceref="ngModel" [(ngModel)]="priceprop" type="text" name="price" placeholder="price expected">
+        <h3>DESCRIBE YOUR BOOK</h3>
+        <input id="t" #textarearef="ngModel" [(ngModel)]="textareaprop" type="text" placeholder="description of your book" name="text">
+        
         <h3>Book image</h3>
         <input  type="file" (change)="getFile($event)" name="image" placeholder="upload book img">
         <h3>Country</h3>
@@ -63,9 +66,7 @@
         <input #emailref="ngModel" [(ngModel)]="emailprop" type="email" name="email" placeholder="email">
         <h3>Date of uploading book</h3>
         <input #dateref="ngModel" [(ngModel)]="dateprop" type="date" name="date" placeholder="date">
-        <h3>DESCRIBE YOUR BOOK</h3>
-        <input class="text" #textarearef="ngModel" [(ngModel)]="textareaprop" type="text" placeholder="discription of your book" name="textarea"  >
-        <button type="submit" (click)="publish()" >PUBLISH</button>
+                <button type="submit" (click)="publish()" >PUBLISH</button>
     </div>
   </div>
 </form>

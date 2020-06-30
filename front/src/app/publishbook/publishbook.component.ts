@@ -97,6 +97,7 @@ publish()
   formData.set('category',this.categoryprop );
   formData.set('title',this.titleprop );
   formData.set('price',this.priceprop );
+  formData.set('text',this.textareaprop);
   formData.set('country',this.countryprop );
   formData.set('state',this.stateprop );
   formData.set('city',this.cityprop );
@@ -105,13 +106,14 @@ publish()
   formData.set('email',this.emailprop );
   formData.set('date',this.dateprop );
   formData.set('image', this.bookImage);
-  formData.set('textarea',this.textareaprop);
+  
 
   this.ds.publish(formData)
   .subscribe((response)=>{
   if(response.status=="ok")
           { 
             alert("your book is being published for sell");
+            
             this.router.navigate(['/dashboard']);
            }
   else{
